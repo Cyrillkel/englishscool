@@ -9,6 +9,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mentoralex.ru"),
   title: `${site.name} — ${site.role}`,
   description: site.description,
 };
