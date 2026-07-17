@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
+}
+
+@theme {
+  --color-cream: #fbf6ee;
+  --color-cream-deep: #f3ebdd;
+  --color-ink: #1d2b4f;
+  --color-ink-soft: #5b6584;
+  --color-accent: #4f7df3;
+  --color-sunshine: #ffc94d;
+  --color-coral: #f2545b;
+  --color-teal: #2ec4b6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+}
+
+::selection {
+  background-color: var(--color-sunshine);
+  color: var(--color-ink);
+}
