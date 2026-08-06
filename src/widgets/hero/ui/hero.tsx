@@ -67,7 +67,7 @@ export function Hero() {
           {highlights.map((item) => (
             <li
               key={item.label}
-              className="flex min-w-40 flex-1 flex-col items-center gap-1 rounded-2xl border border-ink/10 bg-white/70 px-5 py-4 text-center"
+              className="flex min-w-40 flex-1 flex-col items-center justify-center gap-1 rounded-2xl border border-ink/10 bg-white/70 px-5 py-4 text-center"
             >
               <span className="text-2xl" aria-hidden="true">
                 {item.icon}
