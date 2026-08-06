@@ -1,10 +1,11 @@
 import { Button, Highlight, ImagePlaceholder } from "@/shared/ui";
 
-const stats = [
-  { value: "8+", label: "лет преподавания" },
-  { value: "200+", label: "учеников" },
-  { value: "IELTS 8.5", label: "мой результат" },
-  { value: "100%", label: "уроки онлайн" },
+const highlights = [
+  { icon: "🎯", value: "10+", label: "лет практики" },
+  { icon: "🧑‍🎓", value: "324", label: "ученика" },
+  { icon: "🗣️", value: "3", label: "языка: английский, шведский, РКИ" },
+  { icon: "🌍", value: "30+", label: "стран, где живут ученики" },
+  { icon: "🧠", value: "", label: "психология и менторство" },
 ];
 
 export function Hero() {
@@ -15,19 +16,19 @@ export function Hero() {
           {/* Текст */}
           <div>
             <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/60 px-4 py-1.5 text-sm font-semibold text-ink-soft">
-              🇬🇧 Онлайн-уроки английского языка
+              🌍 Языки · психология · менторство
             </p>
             <h1 className="text-4xl leading-tight font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
               Привет, я Alex&nbsp;👋
             </h1>
             <p className="mt-6 text-xl leading-relaxed text-ink-soft sm:text-2xl">
-              Помогаю <Highlight>заговорить</Highlight> на английском —
-              свободно, уверенно и без зубрёжки.
+              Помогаю <Highlight>заговорить</Highlight> на новом языке,
+              разобраться в себе и двигаться вперёд.
             </p>
             <p className="mt-4 max-w-xl leading-relaxed text-ink-soft">
-              Индивидуальные занятия для взрослых и подростков: разговорная
-              практика, подготовка к экзаменам и английский для работы. Первый
-              урок — бесплатно.
+              Индивидуальные занятия английским, шведским и РКИ для переезда,
+              карьеры и уверенного общения, а ещё психологическая поддержка и
+              менторство. Первый урок бесплатно.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button href="#contact">Записаться на пробный урок</Button>
@@ -53,27 +54,33 @@ export function Hero() {
               className="relative aspect-square w-full rounded-full"
             />
             <div className="absolute -right-2 top-8 rotate-3 rounded-2xl bg-white px-4 py-2 text-sm font-bold shadow-lg">
-              🎯 IELTS 8.5
+              🌍 30+ стран
             </div>
             <div className="absolute -left-4 bottom-10 -rotate-3 rounded-2xl bg-white px-4 py-2 text-sm font-bold shadow-lg">
-              💬 200+ учеников
+              🧑‍🎓 324 ученика
             </div>
           </div>
         </div>
 
         {/* Цифры */}
-        <dl className="mt-16 grid grid-cols-2 gap-8 border-t border-ink/10 pt-10 sm:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <dt className="order-2 mt-1 text-sm font-medium text-ink-soft">
-                {stat.label}
-              </dt>
-              <dd className="text-2xl font-extrabold sm:text-3xl">
-                {stat.value}
-              </dd>
-            </div>
+        <ul className="mt-16 flex flex-wrap justify-center gap-4 border-t border-ink/10 pt-10">
+          {highlights.map((item) => (
+            <li
+              key={item.label}
+              className="flex min-w-40 flex-1 flex-col items-center gap-1 rounded-2xl border border-ink/10 bg-white/70 px-5 py-4 text-center"
+            >
+              <span className="text-2xl" aria-hidden="true">
+                {item.icon}
+              </span>
+              {item.value && (
+                <span className="text-xl font-extrabold">{item.value}</span>
+              )}
+              <span className="text-xs leading-snug font-medium text-ink-soft">
+                {item.label}
+              </span>
+            </li>
           ))}
-        </dl>
+        </ul>
       </div>
     </section>
   );
