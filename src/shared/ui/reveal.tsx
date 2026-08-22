@@ -48,7 +48,7 @@ export function Reveal({
     <Component
       ref={ref}
       style={visible && delay ? { transitionDelay: `${delay}ms` } : undefined}
-      className={`transition-all duration-500 ease-out ${
+      className={`transition-all duration-800 ease-[cubic-bezier(0.19,1,0.22,1)] hover:duration-150 ${
         visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
       } ${className}`}
     >
