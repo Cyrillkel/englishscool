@@ -50,7 +50,7 @@ export function Hero() {
               aria-hidden="true"
             />
             <Image
-              src="/photo_2026-01-12_13-45-19.jpg"
+              src="/photo_2023-09-09_02-35-11.jpg"
               alt="Alex Barybin"
               width={640}
               height={640}
