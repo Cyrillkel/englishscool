@@ -51,7 +51,7 @@ export function Hero() {
             />
             <Image
               src="/photo_2023-09-09_02-35-11.jpg"
-              alt="Alex Barybin"
+              alt="Alex Barybin — преподаватель языков, психолог, ментор"
               width={640}
               height={640}
               priority

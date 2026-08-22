@@ -74,7 +74,7 @@ export function Testimonials() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={testimonial.avatar}
-                alt=""
+                alt={testimonial.name}
                 width={44}
                 height={44}
                 loading="lazy"
