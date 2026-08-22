@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://mentoralex.ru"),
   title: `${site.name} — ${site.role}`,
   description: site.description,
+  verification: {
+    yandex: "4a55702455acb8af",
+    google: "766hnVuOveOP4XtG32qgxNdLtXCNhhyjiMyz9PgRmpY",
+  },
 };
 
 export default function RootLayout({
