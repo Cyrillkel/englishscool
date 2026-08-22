@@ -1,4 +1,4 @@
-import { Section, SectionHeading } from "@/shared/ui";
+import { Reveal, Section, SectionHeading } from "@/shared/ui";
 
 const services = [
   {
@@ -51,10 +51,12 @@ export function Services() {
         subtitle="Программа собирается под вашу ситуацию: от первого слова на новом языке до уверенной жизни в новой стране."
       />
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((service) => (
-          <article
+        {services.map((service, index) => (
+          <Reveal
             key={service.title}
-            className={`rounded-3xl p-8 transition-transform hover:-translate-y-1 ${service.accent}`}
+            as="article"
+            delay={index * 70}
+            className={`rounded-3xl p-8 hover:-translate-y-1 ${service.accent}`}
           >
             <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-3xl shadow-sm">
               {service.emoji}
@@ -63,7 +65,7 @@ export function Services() {
             <p className="mt-3 leading-relaxed text-ink-soft">
               {service.description}
             </p>
-          </article>
+          </Reveal>
         ))}
       </div>
     </Section>

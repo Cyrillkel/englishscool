@@ -1,4 +1,5 @@
-import { Button, Highlight, ImagePlaceholder } from "@/shared/ui";
+import Image from "next/image";
+import { Button, Highlight, Reveal } from "@/shared/ui";
 
 const highlights = [
   { icon: "🎯", value: "10+", label: "лет практики" },
@@ -48,10 +49,13 @@ export function Hero() {
               className="absolute -bottom-8 -left-8 h-44 w-44 rounded-full bg-accent/20 blur-2xl"
               aria-hidden="true"
             />
-            <ImagePlaceholder
-              emoji="👩‍🏫"
-              label="Фото Alex — добавим позже"
-              className="relative aspect-square w-full rounded-full"
+            <Image
+              src="/photo_2026-01-12_13-45-19.jpg"
+              alt="Alex Barybin"
+              width={640}
+              height={640}
+              priority
+              className="relative aspect-square w-full rounded-full object-cover shadow-xl"
             />
             <div className="absolute -right-2 top-8 rotate-3 rounded-2xl bg-white px-4 py-2 text-sm font-bold shadow-lg">
               🌍 30+ стран
@@ -64,9 +68,11 @@ export function Hero() {
 
         {/* Цифры */}
         <ul className="mt-16 flex flex-wrap justify-center gap-4 border-t border-ink/10 pt-10">
-          {highlights.map((item) => (
-            <li
+          {highlights.map((item, index) => (
+            <Reveal
               key={item.label}
+              as="li"
+              delay={index * 70}
               className="flex min-w-40 flex-1 flex-col items-center justify-center gap-1 rounded-2xl border border-ink/10 bg-white/70 px-5 py-4 text-center"
             >
               <span className="text-2xl" aria-hidden="true">
@@ -78,7 +84,7 @@ export function Hero() {
               <span className="text-xs leading-snug font-medium text-ink-soft">
                 {item.label}
               </span>
-            </li>
+            </Reveal>
           ))}
         </ul>
       </div>
