@@ -16,14 +16,14 @@ export const site = {
   ],
   contacts: {
     telegram: "https://t.me/username",
-    whatsapp: "https://wa.me/79000000000",
-    email: "hello@example.com",
+    whatsapp: "https://wa.me/79164644505",
+    email: "barybinaleks@gmail.com",
     instagram: "https://instagram.com/username",
     youtube: "https://youtube.com/@username",
   },
 } as const;
 
-/** Страны, где Alex жил, работал и преподавал — для плашки в разделе «Обо мне». */
+/** Страны, где Alex жил, работал и преподавал — для отдельного раздела «География». */
 export const countries = [
   { name: "Россия", flag: "🇷🇺" },
   { name: "Германия", flag: "🇩🇪" },
