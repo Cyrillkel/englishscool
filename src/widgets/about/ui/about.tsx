@@ -1,4 +1,3 @@
-import { countries } from "@/shared/config/site";
 import { ImagePlaceholder, Section } from "@/shared/ui";
 
 const bio = [
@@ -30,21 +29,6 @@ export function About() {
               </p>
             ))}
           </div>
-
-          <p className="mt-7 mb-3 text-sm font-semibold text-ink-soft">
-            Жил, работал и преподавал в разных странах:
-          </p>
-          <ul className="flex flex-wrap gap-2">
-            {countries.map((country) => (
-              <li
-                key={country.name}
-                className="inline-flex items-center gap-1.5 rounded-full bg-cream-deep px-3.5 py-1.5 text-sm font-medium"
-              >
-                <span aria-hidden="true">{country.flag}</span>
-                {country.name}
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </Section>
