@@ -1,12 +1,12 @@
 import { site } from "@/shared/config/site";
-import { Button, Section } from "@/shared/ui";
+import { Button, Reveal, Section } from "@/shared/ui";
 
 export function ContactCta() {
   return (
     <Section id="contact">
-      <div className="rounded-[2.5rem] bg-ink px-6 py-14 text-center text-cream sm:px-12 sm:py-20">
+      <Reveal className="rounded-[2.5rem] bg-ink px-6 py-14 text-center text-cream sm:px-12 sm:py-20">
         <h2 className="mx-auto max-w-2xl text-3xl font-extrabold tracking-tight sm:text-4xl">
-          Готовы заговорить по-английски?
+          Готовы начать?
         </h2>
         <p className="mx-auto mt-5 max-w-xl leading-relaxed text-cream/70">
           Запишитесь на бесплатный пробный урок: познакомимся, определим ваш
@@ -29,7 +29,7 @@ export function ContactCta() {
             {site.contacts.email}
           </a>
         </p>
-      </div>
+      </Reveal>
     </Section>
   );
 }

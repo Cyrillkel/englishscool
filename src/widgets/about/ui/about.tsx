@@ -1,4 +1,4 @@
-import { ImagePlaceholder, Section } from "@/shared/ui";
+import { ImagePlaceholder, Reveal, Section } from "@/shared/ui";
 
 const bio = [
   "Я психолог, преподаватель языков и ментор. Уже более 10 лет я работаю с людьми, которым важно не просто получить новые знания, а найти им практическое применение в жизни: говорить на новом языке, уверенно чувствовать себя в другой стране и культуре, справляться со сложностями и достигать своих целей.",
@@ -10,12 +10,14 @@ export function About() {
   return (
     <Section id="about" className="bg-white/50">
       <div className="grid items-center gap-12 lg:grid-cols-2">
-        <ImagePlaceholder
-          emoji="📚"
-          label="Фото с урока — добавим позже"
-          className="mx-auto aspect-4/5 w-full max-w-md rounded-[2.5rem]"
-        />
-        <div>
+        <Reveal>
+          <ImagePlaceholder
+            emoji="📚"
+            label="Фото с урока — добавим позже"
+            className="mx-auto aspect-4/5 w-full max-w-md rounded-[2.5rem]"
+          />
+        </Reveal>
+        <Reveal delay={150}>
           <p className="mb-3 text-xs font-extrabold tracking-[0.2em] text-accent uppercase">
             Обо мне
           </p>
@@ -29,7 +31,7 @@ export function About() {
               </p>
             ))}
           </div>
-        </div>
+        </Reveal>
       </div>
     </Section>
   );

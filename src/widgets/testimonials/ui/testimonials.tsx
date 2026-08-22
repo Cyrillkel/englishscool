@@ -1,4 +1,4 @@
-import { Section, SectionHeading } from "@/shared/ui";
+import { Reveal, Section, SectionHeading } from "@/shared/ui";
 
 /**
  * Реальные отзывы учеников. Фото — временные стоковые заглушки с
@@ -57,9 +57,11 @@ export function Testimonials() {
         subtitle="Результаты, которыми я горжусь больше любых сертификатов."
       />
       <div className="columns-1 gap-6 sm:columns-2 lg:columns-3">
-        {testimonials.map((testimonial) => (
-          <figure
+        {testimonials.map((testimonial, index) => (
+          <Reveal
             key={testimonial.id}
+            as="figure"
+            delay={(index % 3) * 70}
             className="mb-6 break-inside-avoid rounded-3xl bg-white p-8 shadow-sm"
           >
             <div className="text-sunshine" aria-hidden="true">
@@ -85,7 +87,7 @@ export function Testimonials() {
                 </span>
               </span>
             </figcaption>
-          </figure>
+          </Reveal>
         ))}
       </div>
     </Section>

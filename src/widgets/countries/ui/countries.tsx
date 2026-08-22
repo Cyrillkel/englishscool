@@ -1,5 +1,5 @@
 import { countries } from "@/shared/config/site";
-import { Section, SectionHeading } from "@/shared/ui";
+import { Reveal, Section, SectionHeading } from "@/shared/ui";
 
 const accents = [
   "bg-accent/10",
@@ -20,15 +20,17 @@ export function Countries() {
       />
       <ul className="mx-auto flex max-w-3xl flex-wrap justify-center gap-4">
         {countries.map((country, index) => (
-          <li
+          <Reveal
             key={country.name}
+            as="li"
+            delay={index * 70}
             className={`flex items-center gap-3 rounded-2xl px-6 py-4 text-lg font-bold ${accents[index % accents.length]}`}
           >
             <span className="text-2xl" aria-hidden="true">
               {country.flag}
             </span>
             {country.name}
-          </li>
+          </Reveal>
         ))}
       </ul>
     </Section>
