@@ -7,7 +7,10 @@ cd /var/www/englishscool
 git fetch origin main
 git reset --hard origin/main
 
+mkdir -p public/uploads .data
+
 pnpm install --frozen-lockfile
+pnpm db:migrate
 pnpm build
 
 pm2 startOrReload ecosystem.config.js

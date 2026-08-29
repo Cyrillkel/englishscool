@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { site } from "@/shared/config/site";
 import { Button } from "@/shared/ui";
 
@@ -5,25 +6,25 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink/5 bg-cream/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <a href="#" className="text-lg font-extrabold tracking-tight">
+        <Link href="/" className="text-lg font-extrabold tracking-tight">
           {site.logo.first}
           <span className="text-accent">.</span>
           {site.logo.second}
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
           {site.nav.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className="text-sm font-semibold text-ink-soft transition-colors hover:text-ink"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <Button href="#contact" size="sm">
+        <Button href="/#contact" size="sm">
           Пробный урок
         </Button>
       </div>

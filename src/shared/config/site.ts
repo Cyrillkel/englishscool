@@ -9,10 +9,11 @@ export const site = {
   description:
     "Английский, шведский и РКИ онлайн: переезд за границу, карьера, свободное общение, психологическая поддержка и менторство. Бесплатный пробный урок.",
   nav: [
-    { label: "Услуги", href: "#services" },
-    { label: "Обо мне", href: "#about" },
-    { label: "Отзывы", href: "#reviews" },
-    { label: "Контакты", href: "#contact" },
+    { label: "Услуги", href: "/#services" },
+    { label: "Обо мне", href: "/#about" },
+    { label: "Отзывы", href: "/#reviews" },
+    { label: "Блог", href: "/blog" },
+    { label: "Контакты", href: "/#contact" },
   ],
   contacts: {
     telegram: "https://t.me/username",

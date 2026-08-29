@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { site } from "@/shared/config/site";
 
 const socials = [
@@ -15,6 +16,12 @@ export function Footer() {
           © {new Date().getFullYear()} {site.name} · {site.role}
         </p>
         <nav className="flex flex-wrap justify-center gap-6">
+          <Link
+            href="/blog"
+            className="font-semibold transition-colors hover:text-ink"
+          >
+            Блог
+          </Link>
           {socials.map((social) => (
             <a
               key={social.label}
