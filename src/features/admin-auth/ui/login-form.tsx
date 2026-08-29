@@ -4,13 +4,13 @@ export function LoginForm({ hasError }: { hasError: boolean }) {
   return (
     <form action={loginAction} className="w-full max-w-sm space-y-4">
       <div>
-        <label htmlFor="email" className="mb-1.5 block text-sm font-semibold">
-          Email
+        <label htmlFor="login" className="mb-1.5 block text-sm font-semibold">
+          Логин
         </label>
         <input
-          id="email"
-          name="email"
-          type="email"
+          id="login"
+          name="login"
+          type="text"
           required
           autoComplete="username"
           className="w-full rounded-xl border border-ink/15 bg-white px-4 py-2.5 outline-none focus:border-accent"
@@ -32,7 +32,7 @@ export function LoginForm({ hasError }: { hasError: boolean }) {
 
       {hasError && (
         <p className="text-sm font-medium text-coral">
-          Неверный email или пароль.
+          Неверный логин или пароль.
         </p>
       )}
 

@@ -7,6 +7,9 @@ import type { NextAuthConfig } from "next-auth";
  * (Server Actions, API-роут).
  */
 export const authConfig = {
+  // Self-hosted (не Vercel) — без этого Auth.js в проде отклоняет запросы
+  // с ошибкой UntrustedHost, так как некому подтвердить реальный хост.
+  trustHost: true,
   session: { strategy: "jwt" },
   pages: { signIn: "/admin/login" },
   providers: [],

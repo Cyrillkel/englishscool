@@ -8,28 +8,28 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
     Credentials({
       credentials: {
-        email: { label: "Email", type: "email" },
+        login: { label: "Логин", type: "text" },
         password: { label: "Пароль", type: "password" },
       },
       authorize: async (credentials) => {
-        const email = credentials?.email;
+        const login = credentials?.login;
         const password = credentials?.password;
-        if (typeof email !== "string" || typeof password !== "string") {
+        if (typeof login !== "string" || typeof password !== "string") {
           return null;
         }
 
-        const adminEmail = process.env.ADMIN_EMAIL;
+        const adminLogin = process.env.ADMIN_LOGIN;
         const adminPasswordHash = process.env.ADMIN_PASSWORD_HASH;
-        if (!adminEmail || !adminPasswordHash) {
+        if (!adminLogin || !adminPasswordHash) {
           throw new Error(
-            "ADMIN_EMAIL / ADMIN_PASSWORD_HASH не заданы в .env",
+            "ADMIN_LOGIN / ADMIN_PASSWORD_HASH не заданы в .env",
           );
         }
 
-        if (email !== adminEmail) return null;
+        if (login !== adminLogin) return null;
         if (!verifyPassword(password, adminPasswordHash)) return null;
 
-        return { id: "admin", email: adminEmail };
+        return { id: "admin", name: adminLogin };
       },
     }),
   ],
