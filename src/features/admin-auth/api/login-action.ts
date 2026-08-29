@@ -7,7 +7,7 @@ import { signIn } from "@/shared/lib/auth";
 export async function loginAction(formData: FormData) {
   try {
     await signIn("credentials", {
-      email: formData.get("email"),
+      login: formData.get("login"),
       password: formData.get("password"),
       redirectTo: "/admin/posts",
     });
