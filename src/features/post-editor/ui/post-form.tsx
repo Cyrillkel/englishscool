@@ -1,5 +1,5 @@
-import Image from "next/image";
 import type { Post } from "@/entities/post";
+import { CoverImageInput } from "./cover-image-input";
 import { TiptapEditor } from "./tiptap-editor";
 
 const INPUT_CLASS =
@@ -45,29 +45,7 @@ export function PostForm({
         <label htmlFor="coverImage" className="mb-1.5 block text-sm font-semibold">
           Обложка
         </label>
-        {post?.coverImage && (
-          <div className="relative mb-3 aspect-video w-full max-w-xs overflow-hidden rounded-xl">
-            <Image
-              src={post.coverImage}
-              alt=""
-              fill
-              sizes="320px"
-              className="object-cover"
-            />
-          </div>
-        )}
-        <input
-          id="coverImage"
-          name="coverImage"
-          type="file"
-          accept="image/jpeg,image/png,image/webp,image/gif"
-          className="block text-sm"
-        />
-        <p className="mt-1 text-xs text-ink-soft">
-          {post?.coverImage
-            ? "Оставьте пустым, чтобы сохранить текущую обложку."
-            : "JPEG, PNG, WebP или GIF, до 8 МБ."}
-        </p>
+        <CoverImageInput existingImage={post?.coverImage} />
       </div>
 
       <div>
