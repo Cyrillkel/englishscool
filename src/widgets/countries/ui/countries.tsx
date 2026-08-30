@@ -26,9 +26,14 @@ export function Countries() {
             delay={index * 70}
             className={`flex items-center gap-3 rounded-2xl px-6 py-4 text-lg font-bold ${accents[index % accents.length]}`}
           >
-            <span className="text-2xl" aria-hidden="true">
-              {country.flag}
-            </span>
+            <img
+              src={`https://flagcdn.com/24x18/${country.code}.png`}
+              srcSet={`https://flagcdn.com/48x36/${country.code}.png 2x`}
+              width={24}
+              height={18}
+              alt=""
+              className="rounded-sm shadow-sm"
+            />
             {country.name}
           </Reveal>
         ))}
