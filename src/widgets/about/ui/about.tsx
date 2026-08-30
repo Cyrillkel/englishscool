@@ -1,4 +1,5 @@
-import { ImagePlaceholder, Reveal, Section } from "@/shared/ui";
+import Image from "next/image";
+import { Reveal, Section } from "@/shared/ui";
 
 const bio = [
   "Я психолог, преподаватель языков и ментор. Уже более 10 лет я работаю с людьми, которым важно не просто получить новые знания, а найти им практическое применение в жизни: говорить на новом языке, уверенно чувствовать себя в другой стране и культуре, справляться со сложностями и достигать своих целей.",
@@ -11,10 +12,12 @@ export function About() {
     <Section id="about" className="bg-white/50">
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <Reveal>
-          <ImagePlaceholder
-            emoji="📚"
-            label="Фото с урока — добавим позже"
-            className="mx-auto aspect-4/5 w-full max-w-md rounded-[2.5rem]"
+          <Image
+            src="/photo_2026-08-22_17-57-36.jpg"
+            alt="Alex на онлайн-уроке английского"
+            width={960}
+            height={1280}
+            className="mx-auto aspect-4/5 w-full max-w-md rounded-[2.5rem] object-cover"
           />
         </Reveal>
         <Reveal delay={150}>
