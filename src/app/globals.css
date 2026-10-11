@@ -3,6 +3,7 @@
 
 @theme inline {
   --font-sans: var(--font-manrope), system-ui, sans-serif;
+  --font-ipa: var(--font-phonetic), ui-serif, Georgia, serif;
 }
 
 @theme {

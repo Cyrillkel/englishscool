@@ -1,11 +1,22 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import { site } from "@/shared/config/site";
 import "./globals.css";
 
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin", "cyrillic"],
+});
+
+// Manrope has no phonetic symbols, and Google Fonts strips them from the
+// files it serves, so transcriptions use a local font: Gentium Book Plus cut
+// down to Latin and IPA and renamed, as its licence asks (fonts/OFL.txt).
+const phonetic = localFont({
+  src: "./fonts/phonetic-serif.woff2",
+  variable: "--font-phonetic",
+  weight: "400",
+  preload: false,
 });
 
 const ogTitle = `${site.name} — ${site.role}`;
@@ -48,7 +59,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={`${manrope.variable} antialiased`}>
+    <html
+      lang="ru"
+      className={`${manrope.variable} ${phonetic.variable} antialiased`}
+    >
       <body className="font-sans">{children}</body>
     </html>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { entries, roles } from "../model/entries";
+import { entries, ongoing, roles } from "../model/entries";
 import { SplitFlap } from "./split-flap";
 
 function Flag({ code }: { code: string }) {
@@ -156,56 +156,87 @@ export function ExperienceBoard() {
         </div>
       </div>
 
-      <div className="relative">
-        <div
-          data-highlight
-          aria-hidden="true"
-          className="invisible absolute inset-x-0 top-0 rounded-3xl bg-white shadow-sm ring-1 ring-ink/5"
-        />
-        <ol data-list>
-          {entries.map((entry, index) => (
-            <li
-              key={entry.year}
-              id={`experience-${entry.year}`}
-              data-row
-              data-active={active(index)}
-              className="group relative grid scroll-mt-[40vh] grid-cols-[3.75rem_minmax(0,1fr)] gap-x-4 px-5 py-4 sm:grid-cols-[5rem_minmax(0,1fr)] sm:px-7 sm:py-5 lg:scroll-mt-[46vh] lg:grid-cols-[5rem_minmax(0,1fr)_auto] lg:items-center"
-            >
-              <span
-                aria-hidden="true"
-                className="absolute top-5 bottom-5 left-2 w-1 rounded-full sm:left-3"
-                style={{ backgroundColor: roles[entry.role].mark }}
-              />
-              {/* Spans both rows on mobile, so the place sits right under the title. */}
-              <div className="row-span-2 lg:row-span-1">
-                <p className="text-2xl leading-tight font-extrabold tabular-nums transition-colors duration-300 group-data-active:text-accent">
-                  {entry.year}
-                </p>
-                {entry.season && (
-                  <p className="text-xs font-semibold text-ink-soft">
-                    {entry.season}
+      <div>
+        {/* Pinned row, on the same columns as the yearly rows under it. */}
+        <div className="mb-2 grid grid-cols-[3.75rem_minmax(0,1fr)] items-center gap-x-4 rounded-3xl bg-sunshine/25 px-5 py-4 sm:grid-cols-[5rem_minmax(0,1fr)] sm:px-7 sm:py-5">
+          <div>
+            <p className="text-2xl leading-tight font-extrabold tabular-nums">
+              {ongoing.since}
+            </p>
+            <p className="text-xs font-semibold text-ink-soft">
+              <span className="sr-only">по настоящее время</span>
+              <span aria-hidden="true" className="flex items-center gap-1">
+                <svg
+                  viewBox="0 0 12 8"
+                  className="h-2 w-3 shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M1 4h10M8 1l3 3-3 3" />
+                </svg>
+                сейчас
+              </span>
+            </p>
+          </div>
+          <p className="text-lg leading-snug font-extrabold sm:text-xl">
+            {ongoing.title}
+          </p>
+        </div>
+
+        <div className="relative">
+          <div
+            data-highlight
+            aria-hidden="true"
+            className="invisible absolute inset-x-0 top-0 rounded-3xl bg-white shadow-sm ring-1 ring-ink/5"
+          />
+          <ol data-list>
+            {entries.map((entry, index) => (
+              <li
+                key={entry.year}
+                id={`experience-${entry.year}`}
+                data-row
+                data-active={active(index)}
+                className="group relative grid scroll-mt-[40vh] grid-cols-[3.75rem_minmax(0,1fr)] gap-x-4 px-5 py-4 sm:grid-cols-[5rem_minmax(0,1fr)] sm:px-7 sm:py-5 lg:scroll-mt-[46vh] lg:grid-cols-[5rem_minmax(0,1fr)_auto] lg:items-center"
+              >
+                <span
+                  aria-hidden="true"
+                  className="absolute top-5 bottom-5 left-2 w-1 rounded-full sm:left-3"
+                  style={{ backgroundColor: roles[entry.role].mark }}
+                />
+                {/* Spans both rows on mobile, so the place sits right under the title. */}
+                <div className="row-span-2 lg:row-span-1">
+                  <p className="text-2xl leading-tight font-extrabold tabular-nums transition-colors duration-300 group-data-active:text-accent">
+                    {entry.year}
+                  </p>
+                  {entry.season && (
+                    <p className="text-xs font-semibold text-ink-soft">
+                      {entry.season}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <h3 className="leading-snug font-bold sm:text-lg">
+                    {entry.title}
+                  </h3>
+                  {entry.details && (
+                    <p className="mt-1 text-sm leading-relaxed text-ink-soft">
+                      {entry.details}
+                    </p>
+                  )}
+                </div>
+                {entry.place && (
+                  <p className="col-start-2 row-start-2 mt-2 inline-flex items-center gap-2 justify-self-start rounded-full border border-ink/10 bg-white/70 px-3 py-1 text-sm font-semibold lg:col-start-3 lg:row-start-1 lg:mt-0">
+                    <Flag code={entry.place.code} />
+                    {entry.place.city}
                   </p>
                 )}
-              </div>
-              <div>
-                <h3 className="leading-snug font-bold sm:text-lg">
-                  {entry.title}
-                </h3>
-                {entry.details && (
-                  <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-                    {entry.details}
-                  </p>
-                )}
-              </div>
-              {entry.place && (
-                <p className="col-start-2 row-start-2 mt-2 inline-flex items-center gap-2 justify-self-start rounded-full border border-ink/10 bg-white/70 px-3 py-1 text-sm font-semibold lg:col-start-3 lg:row-start-1 lg:mt-0">
-                  <Flag code={entry.place.code} />
-                  {entry.place.city}
-                </p>
-              )}
-            </li>
-          ))}
-        </ol>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </div>
   );
