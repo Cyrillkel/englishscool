@@ -46,7 +46,7 @@ export function Services() {
   return (
     <Section id="services">
       <SectionHeading
-        eyebrow="Направления работы"
+        eyebrow={{ word: "services", sound: "ˈsɜːvɪsɪz", meaning: "услуги" }}
         title="Выберите то, что сейчас важно именно вам"
         subtitle="Программа собирается под вашу ситуацию: от первого слова на новом языке до уверенной жизни в новой стране."
       />

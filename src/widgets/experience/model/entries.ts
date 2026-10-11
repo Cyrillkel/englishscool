@@ -51,6 +51,9 @@ export const roles: Record<
   },
 };
 
+/** What has been going on all along; pinned above the year-by-year rows. */
+export const ongoing = { since: 2016, title: "Педагог, ментор, психолог" };
+
 /**
  * One entry per year, oldest first: the calendar counts forward as the page
  * scrolls. The motion code relies on the years being consecutive.

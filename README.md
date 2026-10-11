@@ -59,7 +59,7 @@ src/
     ├── config/site.ts  # Name, contacts, navigation, countries
     ├── db/             # Drizzle schema, client, migrations
     ├── lib/            # Auth, uploads, slugs, GSAP set-up
-    └── ui/             # Buttons, sections, scroll reveal
+    └── ui/             # Buttons, sections, section labels, scroll reveal
 ```
 
 FSD import rule: a layer may only import from the layers below it
@@ -70,6 +70,10 @@ FSD import rule: a layer may only import from the layers below it
 - Name, contacts, navigation and countries: `src/shared/config/site.ts`.
 - Section texts live in their widgets, `src/widgets/*/ui/`.
 - Experience entries: `src/widgets/experience/model/entries.ts`, one per year, oldest first.
+- The label above each section heading is a dictionary entry (word, transcription,
+  translation): `Term` in `src/shared/ui/term.tsx`. Transcriptions are set in
+  `src/app/fonts/phonetic-serif.woff2`, a renamed subset of Gentium Book Plus
+  (OFL, licence next to the file) that covers Latin and IPA.
 
 ## Experience section
 

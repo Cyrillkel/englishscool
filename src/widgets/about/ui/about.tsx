@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Reveal, Section } from "@/shared/ui";
+import { Reveal, Section, Term } from "@/shared/ui";
 
 const bio = [
   "Я психолог, преподаватель языков и ментор. Уже более 10 лет я работаю с людьми, которым важно не просто получить новые знания, а найти им практическое применение в жизни: говорить на новом языке, уверенно чувствовать себя в другой стране и культуре, справляться со сложностями и достигать своих целей.",
@@ -21,9 +21,12 @@ export function About() {
           />
         </Reveal>
         <Reveal delay={150}>
-          <p className="mb-3 text-xs font-extrabold tracking-[0.2em] text-accent uppercase">
-            Обо мне
-          </p>
+          <Term
+            word="about me"
+            sound="əˈbaʊt miː"
+            meaning="обо мне"
+            className="mb-4"
+          />
           <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
             Помогаю учиться, понимать себя и двигаться вперёд
           </h2>
