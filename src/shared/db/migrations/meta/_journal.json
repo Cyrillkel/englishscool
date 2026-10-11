@@ -8,6 +8,13 @@
       "when": 1788024151136,
       "tag": "0000_mushy_ultragirl",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1791729086678,
+      "tag": "0001_replace_language_barrier_cover",
+      "breakpoints": true
     }
   ]
 }
