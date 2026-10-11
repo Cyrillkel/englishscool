@@ -1,6 +1,6 @@
 /**
- * Единая точка правды о сайте: имя, контакты, навигация.
- * Меняем данные здесь — обновляется весь сайт.
+ * Single source of truth for the site: name, contacts, navigation.
+ * Change the data here and the whole site follows.
  */
 export const site = {
   name: "Alex Barybin",
@@ -11,6 +11,7 @@ export const site = {
   nav: [
     { label: "Услуги", href: "/#services" },
     { label: "Обо мне", href: "/#about" },
+    { label: "Опыт", href: "/#experience" },
     { label: "Отзывы", href: "/#reviews" },
     { label: "Блог", href: "/blog" },
     { label: "Контакты", href: "/#contact" },
@@ -25,10 +26,10 @@ export const site = {
 } as const;
 
 /**
- * Страны, где Alex жил, работал и преподавал — для отдельного раздела
- * «География». code — ISO 3166-1 alpha-2 для картинки флага (flagcdn.com):
- * эмодзи-флаги не рисуются в некоторых браузерах на Windows (fallback —
- * голый буквенный код вместо иконки), картинка работает везде одинаково.
+ * Countries where Alex lived, worked and taught, for the "География" section.
+ * code is ISO 3166-1 alpha-2 for the flag image (flagcdn.com): emoji flags are
+ * not drawn in some browsers on Windows (they fall back to the bare letter
+ * code), an image looks the same everywhere.
  */
 export const countries = [
   { name: "Россия", code: "ru" },
