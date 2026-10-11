@@ -1,6 +1,7 @@
 import { About } from "@/widgets/about";
 import { ContactCta } from "@/widgets/contact-cta";
 import { Countries } from "@/widgets/countries";
+import { Experience } from "@/widgets/experience";
 import { Footer } from "@/widgets/footer";
 import { Header } from "@/widgets/header";
 import { Hero } from "@/widgets/hero";
@@ -15,6 +16,7 @@ export function HomePage() {
         <Hero />
         <Services />
         <About />
+        <Experience />
         <Countries />
         <Testimonials />
         <ContactCta />
