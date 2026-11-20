@@ -5,6 +5,7 @@ import { Experience } from "@/widgets/experience";
 import { Footer } from "@/widgets/footer";
 import { Header } from "@/widgets/header";
 import { Hero } from "@/widgets/hero";
+import { Pricing } from "@/widgets/pricing";
 import { Services } from "@/widgets/services";
 import { Testimonials } from "@/widgets/testimonials";
 
@@ -19,6 +20,7 @@ export function HomePage() {
         <Experience />
         <Countries />
         <Testimonials />
+        <Pricing />
         <ContactCta />
       </main>
       <Footer />

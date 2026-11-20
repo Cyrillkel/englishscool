@@ -13,6 +13,7 @@ export const site = {
     { label: "Обо мне", href: "/#about" },
     { label: "Опыт", href: "/#experience" },
     { label: "Отзывы", href: "/#reviews" },
+    { label: "Цены", href: "/#prices" },
     { label: "Блог", href: "/blog" },
     { label: "Контакты", href: "/#contact" },
   ],

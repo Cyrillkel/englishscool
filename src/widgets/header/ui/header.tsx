@@ -12,12 +12,12 @@ export function Header() {
           {site.logo.second}
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-5 md:flex lg:gap-8">
           {site.nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-semibold text-ink-soft transition-colors hover:text-ink"
+              className="text-sm font-semibold whitespace-nowrap text-ink-soft transition-colors hover:text-ink"
             >
               {item.label}
             </Link>

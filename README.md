@@ -48,6 +48,7 @@ src/
 │   ├── experience/   # Experience by year with a flip calendar
 │   ├── countries/    # Countries
 │   ├── testimonials/ # Reviews
+│   ├── pricing/      # Prices
 │   ├── contact-cta/  # Contacts and lesson sign-up
 │   └── footer/       # Footer
 ├── features/
