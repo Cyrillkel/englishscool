@@ -21,7 +21,6 @@ export function BlogPage({ posts }: { posts: Post[] }) {
       <main>
         <Section>
           <SectionHeading
-            eyebrow={{ word: "notes", sound: "nəʊts", meaning: "заметки" }}
             title="Заметки о языках, психологии и переезде"
             subtitle="Истории учеников, разборы ошибок и всё, что помогает заговорить и адаптироваться в новой стране."
           />

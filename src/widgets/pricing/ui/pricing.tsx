@@ -43,7 +43,6 @@ export function Pricing() {
   return (
     <Section id="prices">
       <SectionHeading
-        eyebrow={{ word: "prices", sound: "ˈpraɪsɪz", meaning: "цены" }}
         title="Стоимость занятий"
         subtitle="Первая встреча бесплатная: познакомимся, разберём вашу цель и решим, с чего начать."
       />

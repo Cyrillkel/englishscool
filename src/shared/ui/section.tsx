@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { Term, type TermProps } from "./term";
 
 export function Section({
   id,
@@ -18,17 +17,14 @@ export function Section({
 }
 
 export function SectionHeading({
-  eyebrow,
   title,
   subtitle,
 }: {
-  eyebrow?: TermProps;
   title: string;
   subtitle?: string;
 }) {
   return (
     <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
-      {eyebrow && <Term {...eyebrow} className="mb-4 justify-center" />}
       <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
         {title}
       </h2>

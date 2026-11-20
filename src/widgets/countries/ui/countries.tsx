@@ -14,11 +14,6 @@ export function Countries() {
   return (
     <Section id="countries">
       <SectionHeading
-        eyebrow={{
-          word: "geography",
-          sound: "dʒiˈɒɡrəfi",
-          meaning: "география",
-        }}
         title="Где я жил, работал и преподавал"
         subtitle="Международный опыт помогает понимать людей с разным культурным контекстом и адаптировать обучение под каждого."
       />

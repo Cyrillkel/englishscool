@@ -52,7 +52,6 @@ export function Testimonials() {
   return (
     <Section id="reviews">
       <SectionHeading
-        eyebrow={{ word: "reviews", sound: "rɪˈvjuːz", meaning: "отзывы" }}
         title="Что говорят ученики"
         subtitle="Результаты, которыми я горжусь больше любых сертификатов."
       />
